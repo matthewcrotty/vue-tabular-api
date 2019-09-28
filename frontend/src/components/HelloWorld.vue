@@ -2,8 +2,8 @@
   <div id='app'>
       <p>{{ message }}<p>
       <div id='table-test'></div>
+      <button @click="$emit('test')">Click</button>
   </div>
-
 </template>
 
 <script>
@@ -14,6 +14,9 @@ export default {
     return {
       message: 'Hello World',
     };
+  },
+  props: {
+    method: { type: Function },
   },
 };
 

@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <router-view/>
+    <MainPage @test="uploadData"/>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
+import MainPage from './components/HelloWorld.vue';
+
 export default {
+  components: { MainPage },
   name: 'App',
+  methods: {
+    uploadData() {
+      this.$parent.uploadData();
+    },
+  },
 };
 </script>
 
