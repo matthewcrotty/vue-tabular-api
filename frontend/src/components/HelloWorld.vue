@@ -2,7 +2,9 @@
   <div id='app'>
       <p>{{ message }}<p>
       <div id='table-test'></div>
-      <button @click="$emit('test')">Click</button>
+      <button @click="$emit('upload')">Import File</button>
+      <button @click="$emit('download')">Download Data</button>
+      <button @click="$emit('api')">ApiTest</button>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ export default {
   name: 'MainPage',
   data() {
     return {
-      message: 'Hello World',
+      message: 'Tabulator File I/O',
     };
   },
   props: {

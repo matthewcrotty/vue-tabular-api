@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import MockApi from './api';
 /* eslint-disable */
 Vue.config.productionTip = false;
 
@@ -18,6 +19,13 @@ new Vue({
     uploadData(){
       this.tabulator.setDataFromLocalFile()
     },
+    exportData() {
+      // TODO: Make file names from date
+      this.tabulator.download('csv', "tableData.csv");
+    },
+    testApi() {
+      console.log(this.api.postFile());
+    }
   },
   mounted(){
     //instantiate Tabulator when element is mounted
@@ -30,5 +38,8 @@ new Vue({
         {title:"Date Of Birth", field:"dob", sorter:"date", align:"center"},
       ],
     });
+    // Create API instance
+    this.api = new MockApi();
+    console.log(this.api);
   },
 });

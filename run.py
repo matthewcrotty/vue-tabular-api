@@ -10,4 +10,4 @@ def index():
 
 @app.route('/datareq')
 def data():
-    return 
+    return "test"
