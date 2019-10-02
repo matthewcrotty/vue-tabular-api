@@ -10,13 +10,20 @@ class Api {
 
 export default class MockApi extends Api {
     postFile(File) {
-        new Promise(function(resolve, reject) {
+        let x = new Promise(function(resolve, reject) {
           setTimeout(function() {
-            resolve('successful return');
+            resolve(File);
           }, 300);
-        });        
+        });   
+        x.then((value) => {
+            console.log(value);
+        });
     }
     getFile() {
-
+        return new Promise(function(resolve, reject) {
+            setTimeout(() => {
+                resolve("test");
+            }, 300);
+        });
     }
 }

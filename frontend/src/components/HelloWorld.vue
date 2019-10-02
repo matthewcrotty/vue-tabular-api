@@ -4,7 +4,8 @@
       <div id='table-test'></div>
       <button @click="$emit('upload')">Import File</button>
       <button @click="$emit('download')">Download Data</button>
-      <button @click="$emit('api')">ApiTest</button>
+      <button @click="$emit('apiPost')">Post File</button>
+      <button @click="$emit('apiGet')">Get File</button>
   </div>
 </template>
 

@@ -23,8 +23,13 @@ new Vue({
       // TODO: Make file names from date
       this.tabulator.download('csv', "tableData.csv");
     },
-    testApi() {
-      console.log(this.api.postFile());
+    testApiPost() {
+      let test = new File(['foo'], "file.txt");
+      console.log(this.api.postFile(test));
+    },
+    async testApiGet(){
+      var x = await this.api.getFile();
+      console.log(x);
     }
   },
   mounted(){

@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <MainPage @upload="uploadData" @download="exportData" @api="testApi"/>
+    <MainPage
+      @upload="uploadData"
+      @download="exportData"
+      @apiPost="testApiPost"
+      @apiGet="testApiGet"
+    />
   </div>
 </template>
 
@@ -18,8 +23,11 @@ export default {
     exportData() {
       this.$parent.exportData();
     },
-    testApi() {
-      this.$parent.testApi();
+    testApiPost() {
+      this.$parent.testApiPost();
+    },
+    testApiGet() {
+      this.$parent.testApiGet();
     }
   },
 };
